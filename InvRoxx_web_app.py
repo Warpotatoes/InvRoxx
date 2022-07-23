@@ -53,16 +53,31 @@ lvl_invo=6
 
 
 
-left_column, right_column = st.columns((1,3))
+left_column, right_column = st.columns((1,1))
 
-with left_column:
+with right_column:#summons images
+    st.text("")
+    st.text("")
+    st.text("")
+    st.text("")
     st.image(image_path+"dragonnet.png")
+    st.text("")
+    st.text("")
+    st.text("")
+    st.text("")
+    st.text("")
     st.image(image_path+"momie.png")
+    st.text("")
+    st.text("")
     st.image(image_path+"bouftou.png")
+    st.text("")
+    st.text("")
     st.image(image_path+"sanglier.png")
+    st.text("")
+    st.text("")
     st.image(image_path+"tofu.png")
 
-with right_column: #Summons damages tables
+with left_column: #Summons damages tables
 
     ######################
     #Dragonnet
