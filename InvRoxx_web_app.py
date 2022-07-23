@@ -1,11 +1,13 @@
 import streamlit as st
  
 image_path='images/'
+
+
 ######################
 # Page Title
 ######################
 
-st.set_page_config(page_title="InvRoxx",page_icon=image_path+"logo_InvRoxx_tab.png")
+st.set_page_config(page_title="InvRoxx",page_icon=image_path+"logo_InvRoxx_tab.png",layout="wide")
 
 st.title("InvRoxx : Le calculateur de roxx de tes invo préférées")
 st.write('''
@@ -51,7 +53,7 @@ lvl_invo=6
 
 
 
-left_column, right_column = st.columns(2)
+left_column, right_column = st.columns((1,3))
 
 with left_column:
     st.image(image_path+"dragonnet.png")
@@ -85,7 +87,7 @@ with right_column: #Summons damages tables
     tab_drag="""
 | Sort | Valeur min | Valeur max |
 | ----------- | ----------- | ----------- |
-    """
+"""
     tab_drag+="| Dragofeu | "+str(int(dragofeu_min))+" | "+str(int(dragofeu_max))+" |\n"
     tab_drag+="| Flamme Persistante (insoignable) | "+str(int(insoi_min))+" | "+str(int(insoi_max))+" |\n"
     tab_drag+="| Substitution (moyenne) | Dommages: "+str(int(drag_substitution))+" | Soin: "+str(int(drag_substitusoin))+" |\n"
@@ -119,7 +121,7 @@ with right_column: #Summons damages tables
     tab_momie="""
 | Sort | Valeur min | Valeur max |
 | ----------- | ----------- | ----------- |
-    """
+"""
     tab_momie+="| Malédiction Vampirique | "+str(int(male_min))+" | "+str(int(male_max))+" |\n"
     tab_momie+="| Bandelette soignante (soin) | "+str(int(bande_min))+" | "+str(int(bande_max))+" |\n"
     tab_momie+="| Substitution (moyenne)| Dommages: "+str(int(momie_substitution))+" | Soin: "+str(int(momie_substitusoin))+" |\n"
@@ -146,7 +148,7 @@ with right_column: #Summons damages tables
     tab_bouf="""
 | Sort | Valeur min | Valeur max |
 | ----------- | ----------- | ----------- |
-    """
+"""
     tab_bouf+="| Morsure | "+str(int(morsure_min))+" | "+str(int(morsure_max))+" |\n"
     tab_bouf+="| Substitution | Dommages: "+substi_non_feu+" | Soin: "+substi_non_feu__soin+" |\n"
     tab_bouf+="| martyr | "+str(int(martyr_bouf))+" | fixe |\n"
@@ -179,7 +181,7 @@ with right_column: #Summons damages tables
     tab_gligli="""
 | Sort | Valeur min | Valeur max |
 | ----------- | ----------- | ----------- |
-    """
+"""
     tab_gligli+="| Embrochement (dopou compris) | "+str(int(embro_min+embro_dopou))+" | "+str(int(embro_max+embro_dopou))+" |\n"
     tab_gligli+="| Poussette (pesanteur, dopou compris) | "+str(int(poussette_min+poussette_dopou))+" | "+str(int(poussette_max+poussette_dopou))+" |\n"
     tab_gligli+="| Substitution | Dommages: "+substi_non_feu+" | Soin: "+substi_non_feu__soin+" |\n"
@@ -206,7 +208,7 @@ with right_column: #Summons damages tables
     tab_tofu="""
 | Sort | Valeur min | Valeur max |
 | ----------- | ----------- | ----------- |
-    """
+"""
     tab_tofu+="| Béco du Tofu | "+str(int(beco_min))+" | "+str(int(beco_max))+" |\n"
     tab_tofu+="| Substitution | Dommages: "+substi_non_feu+" | Soin: "+substi_non_feu__soin+" |\n"
     tab_tofu+="| martyr | "+str(int(martyr_non_bouf))+" | fixe |\n"
