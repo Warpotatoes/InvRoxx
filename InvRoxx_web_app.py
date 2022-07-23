@@ -5,7 +5,7 @@ import streamlit as st
 # Page Title
 ######################
 
-st.set_page_config(page_title="InvRoxx") #page_icon=tab_logo
+st.set_page_config(page_title="InvRoxx",page_icon="logo_InvRoxx_tab.png")
 
 st.title("InvRoxx : Le calculateur de roxx de tes invo préférées")
 st.write('''
