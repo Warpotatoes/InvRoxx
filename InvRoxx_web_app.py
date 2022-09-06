@@ -197,8 +197,8 @@ with left_column: #Summons damages tables
 | Sort | Valeur min | Valeur max |Dommages Poussée |
 | ----------- | ----------- | ----------- |----------- |
 """
-    tab_gligli+="| Embrochement (dopou compris) | "+str(int(embro_min))+" | "+str(int(embro_max))+" | "+str(int(embro_dopou))+" |\n"
-    tab_gligli+="| Poussette (pesanteur, dopou compris) | "+str(int(poussette_min))+" | "+str(int(poussette_max))+" | "+str(int(poussette_dopou))+" |\n"
+    tab_gligli+="| Embrochement | "+str(int(embro_min))+" | "+str(int(embro_max))+" | "+str(int(embro_dopou))+" |\n"
+    tab_gligli+="| Poussette (pesanteur) | "+str(int(poussette_min))+" | "+str(int(poussette_max))+" | "+str(int(poussette_dopou))+" |\n"
     tab_gligli+="| Substitution | Dommages: "+substi_non_feu+" | Soin: "+substi_non_feu__soin+" | - |\n"
     tab_gligli+="| martyr | "+str(int(martyr_non_bouf))+" | fixe | - |\n"
 
