@@ -17,6 +17,8 @@ st.write('''
    
 ''')
 
+st.write("### Tu peux voir de nombreux exemples de stuff pour osa dans tous les éléments et tous niveaux sur ma bibliothèque de stuff : https://touch.dofusbook.net/fr/membre/244671-warp/equipements")
+
 
 ######################
 #SIDEBAR
