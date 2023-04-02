@@ -22,7 +22,7 @@ st.write('''
 #SIDEBAR
 ######################
 
-st.sidebar.image(image_path+"logo_InvRoxx.png" )
+st.sidebar.image(image_path+"logo_invroxx_transp.png" )
 st.sidebar.write("# Stats du personnage") 
 
 stats_perso={}
@@ -31,6 +31,7 @@ stats_perso={}
 stats_perso["Intel"]=int(st.sidebar.text_input("Intelligence", value=100, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
 stats_perso["Chance"]=int(st.sidebar.text_input("Chance", value=100, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
 stats_perso["Agi"]=int(st.sidebar.text_input("Agilité", value=100, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
+stats_perso["pui"]=int(st.sidebar.text_input("Puissance", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
 
 #do fixes
 stats_perso["Dofeu"]=int(st.sidebar.text_input("Dommages Feu", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
@@ -41,14 +42,13 @@ stats_perso["Dopou"]=int(st.sidebar.text_input("Dommages de Poussée", value=0, 
 #soin
 stats_perso["Soin"]=int(st.sidebar.text_input("Soin", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
 
+stats_perso["Do"]=int(st.sidebar.text_input("Dommages", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
+
 
 ######################
 #Variables générales
 ######################
 
-martyr_non_bouf=621
-substi_non_feu ="241-284"
-substi_non_feu__soin ="299-345"
 lvl_invo=6
 
 
@@ -56,25 +56,25 @@ lvl_invo=6
 left_column, right_column = st.columns((1,1))
 
 with right_column:#summons images
-    st.text("")
-    st.text("")
-    st.text("")
-    st.text("")
+    # st.text("")
+    # st.text("")
+    # st.text("")
+    # st.text("")
     st.image(image_path+"dragonnet.png")
-    st.text("")
-    st.text("")
-    st.text("")
-    st.text("")
-    st.text("")
+    # st.text("")
+    # st.text("")
+    # st.text("")
+    # st.text("")
+    # st.text("")
     st.image(image_path+"momie.png")
-    st.text("")
-    st.text("")
+    # st.text("")
+    # st.text("")
     st.image(image_path+"bouftou.png")
-    st.text("")
-    st.text("")
+    # st.text("")
+    # st.text("")
     st.image(image_path+"sanglier.png")
-    st.text("")
-    st.text("")
+    # st.text("")
+    # st.text("")
     st.image(image_path+"tofu.png")
 
 with left_column: #Summons damages tables
@@ -85,7 +85,7 @@ with left_column: #Summons damages tables
 
     st.write("## Dragonnet Rouge")
 
-    drag_intel_base=350
+    drag_intel_base=300
 
     drag_intel=drag_intel_base+stats_perso["Intel"]/2
     drag_do=stats_perso["Dofeu"]/2
@@ -96,8 +96,6 @@ with left_column: #Summons damages tables
     insoi_min=(36*(100+drag_intel)/100+drag_do)//1
     insoi_max=(45*(100+drag_intel)/100+drag_do)//1
 
-    drag_substitution=0.1141*stats_perso["Intel"] + 103.62 +stats_perso["Dofeu"]/2
-    drag_substitusoin=0.1249*stats_perso["Intel"] + 131.13
 
     tab_drag="""
 | Sort | Valeur min | Valeur max |
@@ -105,11 +103,10 @@ with left_column: #Summons damages tables
 """
     tab_drag+="| Dragofeu | "+str(int(dragofeu_min))+" | "+str(int(dragofeu_max))+" |\n"
     tab_drag+="| Flamme Persistante (insoignable) | "+str(int(insoi_min))+" | "+str(int(insoi_max))+" |\n"
-    tab_drag+="| Substitution (moyenne) | Dommages: "+str(int(drag_substitution))+" | Soin: "+str(int(drag_substitusoin))+" |\n"
-    tab_drag+="| martyr | "+str(int(martyr_non_bouf))+" | fixe |\n"
 
     st.write(tab_drag)
 
+    st.text("")
 
     ######################
     #Momie
@@ -117,7 +114,7 @@ with left_column: #Summons damages tables
 
     st.write("## Momie Koalak")
 
-    momie_intel_base=350
+    momie_intel_base=300
 
     momie_intel=momie_intel_base+stats_perso["Intel"]/2
     momie_do=stats_perso["Dofeu"]/2
@@ -129,20 +126,18 @@ with left_column: #Summons damages tables
     bande_min=(51*(100+momie_intel)/100+momie_soin)//1
     bande_max=(60*(100+momie_intel)/100+momie_soin)//1
     
-
-    momie_substitution=0.1141*stats_perso["Intel"] + 103.62 +stats_perso["Dofeu"]/2
-    momie_substitusoin=0.1249*stats_perso["Intel"] + 131.13 +momie_soin
-
     tab_momie="""
 | Sort | Valeur min | Valeur max |
 | ----------- | ----------- | ----------- |
 """
     tab_momie+="| Malédiction Vampirique | "+str(int(male_min))+" | "+str(int(male_max))+" |\n"
     tab_momie+="| Bandelette soignante (soin) | "+str(int(bande_min))+" | "+str(int(bande_max))+" |\n"
-    tab_momie+="| Substitution (moyenne)| Dommages: "+str(int(momie_substitution))+" | Soin: "+str(int(momie_substitusoin))+" |\n"
-    tab_momie+="| martyr | "+str(int(martyr_non_bouf))+" | fixe |\n"
 
     st.write(tab_momie) 
+
+    st.text("")
+    st.text("")
+
 
     ######################
     #Bouftou
@@ -150,7 +145,7 @@ with left_column: #Summons damages tables
 
     st.write("## Bouftou")
 
-    bouf_chance_base=350
+    bouf_chance_base=300
 
     bouf_chance=bouf_chance_base+stats_perso["Chance"]/2
     bouf_do=stats_perso["Doeau"]/2
@@ -158,17 +153,17 @@ with left_column: #Summons damages tables
     morsure_min=(31*(100+bouf_chance)/100+bouf_do)//1
     morsure_max=(35*(100+bouf_chance)/100+bouf_do)//1
 
-    martyr_bouf=0.2676*stats_perso["Chance"] + 243.06+stats_perso["Doeau"]/2
 
     tab_bouf="""
 | Sort | Valeur min | Valeur max |
 | ----------- | ----------- | ----------- |
 """
     tab_bouf+="| Morsure | "+str(int(morsure_min))+" | "+str(int(morsure_max))+" |\n"
-    tab_bouf+="| Substitution | Dommages: "+substi_non_feu+" | Soin: "+substi_non_feu__soin+" |\n"
-    tab_bouf+="| martyr | "+str(int(martyr_bouf))+" | fixe |\n"
 
     st.write(tab_bouf)
+
+    st.text("")
+    st.text("")
 
     ######################
     #Sanglier
@@ -176,7 +171,7 @@ with left_column: #Summons damages tables
 
     st.write("## Sanglier")
 
-    sangli_agi_base=350
+    sangli_agi_base=300
     sangli_dopou_base=157
 
     sangli_agi=sangli_agi_base+stats_perso["Agi"]/2
@@ -194,16 +189,16 @@ with left_column: #Summons damages tables
 
 
     tab_gligli="""
-| Sort | Valeur min | Valeur max |Dommages Poussée |
-| ----------- | ----------- | ----------- |----------- |
+| Sort | Valeur min | Valeur max | Dopou |
+| ----------- | ----------- | ----------- | ----------- |
 """
-    tab_gligli+="| Embrochement | "+str(int(embro_min))+" | "+str(int(embro_max))+" | "+str(int(embro_dopou))+" |\n"
-    tab_gligli+="| Poussette (pesanteur) | "+str(int(poussette_min))+" | "+str(int(poussette_max))+" | "+str(int(poussette_dopou))+" |\n"
-    tab_gligli+="| Substitution | Dommages: "+substi_non_feu+" | Soin: "+substi_non_feu__soin+" | - |\n"
-    tab_gligli+="| martyr | "+str(int(martyr_non_bouf))+" | fixe | - |\n"
+    tab_gligli+="| Embrochement (dopou compris) | "+str(int(embro_min))+" | "+str(int(embro_max))+" | "+str(int(embro_dopou))+" |\n"
+    tab_gligli+="| Poussette (pesanteur, dopou compris) | "+str(int(poussette_min))+" | "+str(int(poussette_max))+" | "+str(int(poussette_dopou))+" |\n"
 
     st.write(tab_gligli)
 
+    st.text("")
+    st.text("")
     ######################
     #Tofu
     ######################
@@ -225,7 +220,48 @@ with left_column: #Summons damages tables
 | ----------- | ----------- | ----------- |
 """
     tab_tofu+="| Béco du Tofu | "+str(int(beco_min))+" | "+str(int(beco_max))+" |\n"
-    tab_tofu+="| Substitution | Dommages: "+substi_non_feu+" | Soin: "+substi_non_feu__soin+" |\n"
-    tab_tofu+="| martyr | "+str(int(martyr_non_bouf))+" | fixe |\n"
 
     st.write(tab_tofu)
+
+    st.text("")
+
+    ######################
+    #substitution
+    ######################
+
+    st.write("## Substitution")
+
+    degats_substi_min=(36*(100+stats_perso["Intel"]+0.80*stats_perso["pui"])/100+stats_perso["Dofeu"]+stats_perso["Do"])//1
+    degats_substi_max=(40*(100+stats_perso["Intel"]+0.80*stats_perso["pui"])/100+stats_perso["Dofeu"]+stats_perso["Do"])//1
+
+    soin_substi_min=(41*(100+stats_perso["Intel"])/100+stats_perso["Soin"])//1
+    soin_substi_max=(45*(100+stats_perso["Intel"])/100+stats_perso["Soin"])//1
+
+    tab_substi="""
+| Sort | Valeur min | Valeur max |
+| ----------- | ----------- | ----------- |
+"""
+    tab_substi+="| degats | "+str(int(degats_substi_min))+" | "+str(int(degats_substi_max))+" |\n"
+    tab_substi+="| soin | "+str(int(soin_substi_min))+" | "+str(int(soin_substi_max))+" |\n"
+
+    st.write(tab_substi)
+
+    st.text("")
+
+    ######################
+    #martyr
+    ######################
+
+    st.write("## Martyr")
+
+    degats_martyr=(60*(100+stats_perso["Chance"]+0.80*stats_perso["pui"])/100+stats_perso["Doeau"]+stats_perso["Do"])//1
+
+    tab_martyr="""
+| Valeur |
+| ----------- |
+"""
+    tab_martyr+="| "+str(int(degats_martyr))+" |\n"
+
+    st.write(tab_martyr)
+
+    st.text("")
