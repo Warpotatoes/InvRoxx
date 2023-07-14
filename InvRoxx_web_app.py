@@ -26,13 +26,14 @@ st.write("### Tu peux voir de nombreux exemples de stuff pour osa dans tous les 
 
 st.sidebar.image(image_path+"logo_invroxx_transp.png" )
 st.sidebar.write("# Stats du personnage") 
+st.sidebar.write("(les stats du parchotage et des points investis ne comptent pas pour les invo)") 
 
 stats_perso={}
 
 #stats
-stats_perso["Intel"]=int(st.sidebar.text_input("Intelligence", value=100, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
-stats_perso["Chance"]=int(st.sidebar.text_input("Chance", value=100, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
-stats_perso["Agi"]=int(st.sidebar.text_input("Agilité", value=100, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
+stats_perso["Intel"]=int(st.sidebar.text_input("Intelligence", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
+stats_perso["Chance"]=int(st.sidebar.text_input("Chance", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
+stats_perso["Agi"]=int(st.sidebar.text_input("Agilité", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
 stats_perso["pui"]=int(st.sidebar.text_input("Puissance", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
 
 #do fixes
