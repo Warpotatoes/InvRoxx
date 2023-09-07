@@ -213,8 +213,8 @@ with left_column: #Summons damages tables
     tofu_agi=tofu_agi_base+stats_perso["Agi"]/2
     tofu_do=stats_perso["Doair"]/2
     
-    beco_min=(14*(100+tofu_agi)/100+tofu_do)//1
-    beco_max=(17*(100+tofu_agi)/100+tofu_do)//1
+    beco_min=(15*(100+tofu_agi)/100+tofu_do)//1
+    beco_max=(18*(100+tofu_agi)/100+tofu_do)//1
 
 
 
