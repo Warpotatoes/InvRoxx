@@ -56,7 +56,11 @@ stats_perso["Do"]=int(st.sidebar.text_input("Dommages", value=0, max_chars=None,
 lvl_invo=6
 
 def calcul_vita(base,multi):
-    return base+multi*(stats_perso["Vita"]-1150)
+    vita=base+multi*(stats_perso["Vita"]-1150)
+    if vita>0 :
+        return vita
+    else:
+        return 0
 
 left_column, right_column = st.columns((1,1))
 
@@ -101,15 +105,15 @@ with left_column: #Summons damages tables
     insoi_min=(36*(100+drag_intel)/100+drag_do)//1
     insoi_max=(45*(100+drag_intel)/100+drag_do)//1
 
-    # st.write("vitalité : "+str(calcul_vita(265,0.25)))
 
     tab_vita_drag="""
-| Valeur |
+| Vitalité |
 | ----------- |
 """
     tab_vita_drag+="| "+str(int(calcul_vita(265,0.25)))+" |\n"
 
     st.write(tab_vita_drag)
+    st.text("")
 
     tab_drag="""
 | Sort | Valeur min | Valeur max |
@@ -117,7 +121,7 @@ with left_column: #Summons damages tables
 """
     tab_drag+="| Dragofeu | "+str(int(dragofeu_min))+" | "+str(int(dragofeu_max))+" |\n"
     tab_drag+="| Flamme Persistante (insoignable) | "+str(int(insoi_min))+" | "+str(int(insoi_max))+" |\n"
-
+    
     st.write(tab_drag)
 
     st.text("")
@@ -140,6 +144,15 @@ with left_column: #Summons damages tables
     bande_min=(51*(100+momie_intel)/100+momie_soin)//1
     bande_max=(60*(100+momie_intel)/100+momie_soin)//1
     
+    tab_vita_momie="""
+| Vitalité |
+| ----------- |
+"""
+    tab_vita_momie+="| "+str(int(calcul_vita(140,0.2)))+" |\n"
+
+    st.write(tab_vita_momie)
+    st.text("")
+
     tab_momie="""
 | Sort | Valeur min | Valeur max |
 | ----------- | ----------- | ----------- |
@@ -167,6 +180,14 @@ with left_column: #Summons damages tables
     morsure_min=(31*(100+bouf_chance)/100+bouf_do)//1
     morsure_max=(35*(100+bouf_chance)/100+bouf_do)//1
 
+    tab_vita_bouf="""
+| Vitalité |
+| ----------- |
+"""
+    tab_vita_bouf+="| "+str(int(calcul_vita(265,0.25)))+" |\n"
+
+    st.write(tab_vita_bouf)
+    st.text("")
 
     tab_bouf="""
 | Sort | Valeur min | Valeur max |
@@ -201,6 +222,14 @@ with left_column: #Summons damages tables
     poussette_max=(17*(100+sangli_agi)/100+sangli_do)//1
     poussette_dopou=(lvl_invo/2+sangli_dopou_base+stats_perso["Dopou"]/2+32)*poussette_poussée/4
 
+    tab_vita_gligli="""
+| Vitalité |
+| ----------- |
+"""
+    tab_vita_gligli+="| "+str(int(calcul_vita(315,0.15)))+" |\n"
+
+    st.write(tab_vita_gligli)
+    st.text("")
 
     tab_gligli="""
 | Sort | Valeur min | Valeur max | Dopou |
@@ -227,7 +256,14 @@ with left_column: #Summons damages tables
     beco_min=(15*(100+tofu_agi)/100+tofu_do)//1
     beco_max=(18*(100+tofu_agi)/100+tofu_do)//1
 
+    tab_vita_tofu="""
+| Vitalité |
+| ----------- |
+"""
+    tab_vita_tofu+="| "+str(int(calcul_vita(95,0.05)))+" |\n"
 
+    st.write(tab_vita_tofu)
+    st.text("")
 
     tab_tofu="""
 | Sort | Valeur min | Valeur max |
