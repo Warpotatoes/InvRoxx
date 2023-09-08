@@ -26,12 +26,12 @@ st.write("### Tu peux voir de nombreux exemples de stuff pour osa dans tous les 
 
 st.sidebar.image(image_path+"logo_invroxx_transp.png" )
 st.sidebar.write("# Stats du personnage") 
-st.sidebar.write("(les stats du parchotage et des points investis ne comptent pas pour les invo)") 
+st.sidebar.write("(les stats du parchotage et des points investis ne comptent pas pour les dégats des invo)") 
 
 stats_perso={}
 
 #stats
-stats_perso["Vita"]=int(st.sidebar.text_input("Vitalité", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
+stats_perso["Vita"]=int(st.sidebar.text_input("Vitalité globale", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
 stats_perso["Intel"]=int(st.sidebar.text_input("Intelligence", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
 stats_perso["Chance"]=int(st.sidebar.text_input("Chance", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
 stats_perso["Agi"]=int(st.sidebar.text_input("Agilité", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
@@ -101,9 +101,15 @@ with left_column: #Summons damages tables
     insoi_min=(36*(100+drag_intel)/100+drag_do)//1
     insoi_max=(45*(100+drag_intel)/100+drag_do)//1
 
-    drag_vita=calcul_vita(265,0.25)
+    # st.write("vitalité : "+str(calcul_vita(265,0.25)))
 
-    st.write("vitalité : "+str(drag_vita))
+    tab_vita_drag="""
+| Valeur |
+| ----------- |
+"""
+    tab_vita_drag+="| "+str(int(calcul_vita(265,0.25)))+" |\n"
+
+    st.write(tab_vita_drag)
 
     tab_drag="""
 | Sort | Valeur min | Valeur max |
