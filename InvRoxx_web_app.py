@@ -31,6 +31,7 @@ st.sidebar.write("(les stats du parchotage et des points investis ne comptent pa
 stats_perso={}
 
 #stats
+stats_perso["Vita"]=int(st.sidebar.text_input("Vitalité", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
 stats_perso["Intel"]=int(st.sidebar.text_input("Intelligence", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
 stats_perso["Chance"]=int(st.sidebar.text_input("Chance", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
 stats_perso["Agi"]=int(st.sidebar.text_input("Agilité", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
@@ -54,7 +55,8 @@ stats_perso["Do"]=int(st.sidebar.text_input("Dommages", value=0, max_chars=None,
 
 lvl_invo=6
 
-
+def calcul_vita(base,multi):
+    return base+multi*(stats_perso["Vita"]-1150)
 
 left_column, right_column = st.columns((1,1))
 
@@ -99,6 +101,9 @@ with left_column: #Summons damages tables
     insoi_min=(36*(100+drag_intel)/100+drag_do)//1
     insoi_max=(45*(100+drag_intel)/100+drag_do)//1
 
+    drag_vita=calcul_vita(265,0.25)
+
+    st.write("vitalité : "+str(drag_vita))
 
     tab_drag="""
 | Sort | Valeur min | Valeur max |
