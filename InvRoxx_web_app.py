@@ -18,6 +18,7 @@ st.write('''
 ''')
 
 st.write("### Tu peux voir de nombreux exemples de stuff pour osa dans tous les éléments et tous niveaux sur ma bibliothèque de stuff : https://touch.dofusbook.net/fr/membre/244671-warp/equipements")
+st.write("### Ici on part du principe que l'osa est lvl 200 et ses invo sont lvl 6")
 
 
 ######################
@@ -26,7 +27,7 @@ st.write("### Tu peux voir de nombreux exemples de stuff pour osa dans tous les 
 
 st.sidebar.image(image_path+"logo_invroxx_transp.png" )
 st.sidebar.write("# Stats du personnage") 
-st.sidebar.write("(les stats du parchotage et des points investis ne comptent pas pour les dégats des invo)") 
+st.sidebar.write("(les stats du parchotage et des points investis ne comptent pas pour les dégats des invo, seul l'équipement compte)") 
 
 stats_perso={}
 
@@ -83,6 +84,13 @@ with right_column:#summons images
     st.text("")
     st.text("")
     st.text("")
+    st.image(image_path+"craqueleur.png")
+    st.text("")
+    st.text("")
+    st.text("")
+    st.text("")
+    st.text("")
+    st.text("")
     st.image(image_path+"bouftou.png")
     st.text("")
     st.text("")
@@ -98,6 +106,20 @@ with right_column:#summons images
     st.text("")
     st.text("")
     st.image(image_path+"tofu.png")
+    st.text("")
+    st.text("")
+    st.text("")
+    st.text("")
+    st.text("")
+    st.text("")
+    st.image(image_path+"martyr.png")
+    st.text("")
+    st.text("")
+    st.text("")
+    st.text("")
+    st.text("")
+    st.text("")
+    st.image(image_path+"substi.png")
 
 with left_column: #Summons damages tables
 
@@ -107,7 +129,7 @@ with left_column: #Summons damages tables
 
     st.write("## Dragonnet Rouge")
 
-    drag_intel_base=300
+    drag_intel_base=350
 
     drag_intel=drag_intel_base+stats_perso["Intel"]/2
     drag_do=stats_perso["Dofeu"]/2
@@ -120,10 +142,10 @@ with left_column: #Summons damages tables
 
 
     tab_vita_drag="""
-| Vitalité |
-| ----------- |
+| Vitalité | Bonus au T1 : +20% par mob |
+| ----------- | ----------- |
 """
-    tab_vita_drag+="| "+str(int(calcul_vita(265,0.25)))+" |\n"
+    tab_vita_drag+="| "+str(int(calcul_vita(170,0.2)))+" | "+str(int(calcul_vita(170,0.2)*0.2))+"\n"
 
     st.write(tab_vita_drag)
     st.text("")
@@ -145,7 +167,7 @@ with left_column: #Summons damages tables
 
     st.write("## Momie Koalak")
 
-    momie_intel_base=300
+    momie_intel_base=350
 
     momie_intel=momie_intel_base+stats_perso["Intel"]/2
     momie_do=stats_perso["Dofeu"]/2
@@ -158,10 +180,10 @@ with left_column: #Summons damages tables
     bande_max=(60*(100+momie_intel)/100+momie_soin)//1
     
     tab_vita_momie="""
-| Vitalité |
-| ----------- |
+| Vitalité | Bonus au T1 : +20% par mob |
+| ----------- | ----------- |
 """
-    tab_vita_momie+="| "+str(int(calcul_vita(140,0.2)))+" |\n"
+    tab_vita_momie+="| "+str(int(calcul_vita(135,0.15)))+" | "+str(int(calcul_vita(135,0.15)*0.2))+"\n"
 
     st.write(tab_vita_momie)
     st.text("")
@@ -178,6 +200,44 @@ with left_column: #Summons damages tables
     st.text("")
     st.text("")
 
+    ######################
+    #Craqueleur
+    ######################
+
+    st.write("## Craqueleur")
+
+    craq_chance_base=300
+
+    craq_chance=craq_chance_base+stats_perso["Chance"]/2
+    craq_do=stats_perso["Doeau"]/2
+
+    ecrasement_min=(28*(100+craq_chance)/100+craq_do)//1
+    ecrasement_max=(33*(100+craq_chance)/100+craq_do)//1
+
+    frappe_etourdissante_min=(33*(100+craq_chance)/100+craq_do)//1
+    frappe_etourdissante_max=(37*(100+craq_chance)/100+craq_do)//1
+
+
+    tab_vita_craq="""
+| Vitalité | Bonus au T1 : +20% par mob |
+| ----------- | ----------- |
+"""
+    tab_vita_craq+="| "+str(int(calcul_vita(350,0.2)))+" | "+str(int(calcul_vita(350,0.2)*0.2))+"\n"
+
+    st.write(tab_vita_craq)
+    st.text("")
+
+    tab_craq="""
+| Sort | Valeur min | Valeur max |
+| ----------- | ----------- | ----------- |
+"""
+    tab_craq+="| Ecrasement | "+str(int(ecrasement_min))+" | "+str(int(ecrasement_max))+" |\n"
+    tab_craq+="| Frappe étourdissante (rall 2 pa) | "+str(int(frappe_etourdissante_min))+" | "+str(int(frappe_etourdissante_max))+" |\n"
+    
+    st.write(tab_craq)
+
+    st.text("")
+
 
     ######################
     #Bouftou
@@ -185,7 +245,7 @@ with left_column: #Summons damages tables
 
     st.write("## Bouftou")
 
-    bouf_chance_base=300
+    bouf_chance_base=150
 
     bouf_chance=bouf_chance_base+stats_perso["Chance"]/2
     bouf_do=stats_perso["Doeau"]/2
@@ -194,10 +254,10 @@ with left_column: #Summons damages tables
     morsure_max=(35*(100+bouf_chance)/100+bouf_do)//1
 
     tab_vita_bouf="""
-| Vitalité |
-| ----------- |
+| Vitalité | Bonus au T1 : +20% par mob |
+| ----------- | ----------- |
 """
-    tab_vita_bouf+="| "+str(int(calcul_vita(265,0.25)))+" |\n"
+    tab_vita_bouf+="| "+str(int(calcul_vita(260,0.2)))+" | "+str(int(calcul_vita(260,0.2)*0.2))+"\n"
 
     st.write(tab_vita_bouf)
     st.text("")
@@ -219,8 +279,8 @@ with left_column: #Summons damages tables
 
     st.write("## Sanglier")
 
-    sangli_agi_base=300
-    sangli_dopou_base=157
+    sangli_agi_base=350
+    sangli_dopou_base=157 #dans les stats du gligli c'est marqué 60 mais en pratique ça tape comme si 157
 
     sangli_agi=sangli_agi_base+stats_perso["Agi"]/2
     sangli_do=stats_perso["Doair"]/2
@@ -236,10 +296,10 @@ with left_column: #Summons damages tables
     poussette_dopou=(lvl_invo/2+sangli_dopou_base+stats_perso["Dopou"]/2+32)*poussette_poussée/4
 
     tab_vita_gligli="""
-| Vitalité |
-| ----------- |
+| Vitalité | Bonus au T1 : +20% par mob |
+| ----------- | ----------- |
 """
-    tab_vita_gligli+="| "+str(int(calcul_vita(315,0.15)))+" |\n"
+    tab_vita_gligli+="| "+str(int(calcul_vita(310,0.1)))+" | "+str(int(calcul_vita(310,0.1)*0.2))+"\n"
 
     st.write(tab_vita_gligli)
     st.text("")
@@ -261,7 +321,7 @@ with left_column: #Summons damages tables
 
     st.write("## Tofu")
 
-    tofu_agi_base=500
+    tofu_agi_base=350
     
     tofu_agi=tofu_agi_base+stats_perso["Agi"]/2
     tofu_do=stats_perso["Doair"]/2
@@ -270,10 +330,10 @@ with left_column: #Summons damages tables
     beco_max=(18*(100+tofu_agi)/100+tofu_do)//1
 
     tab_vita_tofu="""
-| Vitalité |
-| ----------- |
+| Vitalité | Bonus au T1 : +20% par mob |
+| ----------- | ----------- |
 """
-    tab_vita_tofu+="| "+str(int(calcul_vita(95,0.05)))+" |\n"
+    tab_vita_tofu+="| "+str(int(calcul_vita(95,0.05)))+" | "+str(int(calcul_vita(95,0.05)*0.2))+"\n"
 
     st.write(tab_vita_tofu)
     st.text("")
