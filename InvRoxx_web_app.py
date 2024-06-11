@@ -18,7 +18,7 @@ st.write('''
 ''')
 
 st.write("### Tu peux voir de nombreux exemples de stuff pour osa dans tous les éléments et tous niveaux sur ma bibliothèque de stuff : https://touch.dofusbook.net/fr/membre/244671-warp/equipements")
-st.write("### Ici on part du principe que l'osa est lvl 200 et ses invo sont lvl 6")
+st.write("### Dans la suite de l'outil on part du principe que l'osa est lvl 200 et ses invo sont lvl 6")
 
 
 ######################
@@ -112,14 +112,14 @@ with right_column:#summons images
     st.text("")
     st.text("")
     st.text("")
-    st.image(image_path+"martyr.png")
-    st.text("")
-    st.text("")
-    st.text("")
-    st.text("")
-    st.text("")
-    st.text("")
     st.image(image_path+"substi.png")
+    st.text("")
+    st.text("")
+    st.text("")
+    st.text("")
+    st.text("")
+    st.text("")
+    st.image(image_path+"martyr.png")
 
 with left_column: #Summons damages tables
 
@@ -206,7 +206,7 @@ with left_column: #Summons damages tables
 
     st.write("## Craqueleur")
 
-    craq_chance_base=300
+    craq_chance_base=150
 
     craq_chance=craq_chance_base+stats_perso["Chance"]/2
     craq_do=stats_perso["Doeau"]/2
@@ -245,7 +245,7 @@ with left_column: #Summons damages tables
 
     st.write("## Bouftou")
 
-    bouf_chance_base=150
+    bouf_chance_base=150 #  150
 
     bouf_chance=bouf_chance_base+stats_perso["Chance"]/2
     bouf_do=stats_perso["Doeau"]/2
