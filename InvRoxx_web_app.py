@@ -41,7 +41,8 @@ stats_perso={}
 
 st.sidebar.write("# Stats du personnage") 
 
-if db_link=='':
+if db_link=='' or type(db_stats)==str:
+        
     #stats
     stats_perso["Vita"]=int(st.sidebar.text_input("Vitalité globale", value=1150, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
     stats_perso["Intel"]=int(st.sidebar.text_input("Intelligence", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
