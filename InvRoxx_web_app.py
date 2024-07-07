@@ -27,7 +27,7 @@ st.write("### Dans la suite de l'outil on part du principe que l'osa est lvl 200
 ######################
 
 st.sidebar.image(image_path+"logo_invroxx_transp.png" )
-st.sidebar.write("# Stats du personnage") 
+# st.sidebar.write("# Stats du personnage") 
 # st.sidebar.write("(les stats du parchotage et des points investis ne comptent pas pour les dégats des invo, seul l'équipement compte)") 
 
 db_link=st.sidebar.text_input("Lien dofusbook",placeholder="https://d-bk.net/fr/t/A7si")
