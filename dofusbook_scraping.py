@@ -45,9 +45,9 @@ def get_stats(url):
             if len(s)>1:
                 if int(s[0])>perso[ALIASES[s[1]]]:
                     perso[ALIASES[s[1]]]=int(s[0])
-    else:
         driver.close()
+    else:
         return ("Mauvais lien, copiez collez le lien en haut a droite de la page dofusbook.") 
 
-    driver.close()
+    
     return perso

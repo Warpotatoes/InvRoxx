@@ -39,6 +39,8 @@ if db_link!='':
         st.sidebar.write("Si les stats sont mal récupérées relancez la recherche, dofusbook bug parfois")
 stats_perso={}
 
+st.sidebar.write("# Stats du personnage") 
+
 if db_link=='':
     #stats
     stats_perso["Vita"]=int(st.sidebar.text_input("Vitalité globale", value=1150, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
