@@ -36,7 +36,7 @@ if db_link!='':
     if type(db_stats)==str:
         st.sidebar.write(db_stats)
     else:
-        st.sidebar.write("Si les stats sont mal récupérées relancez la recherche, dofusbook bug parfois")
+        st.sidebar.write("Si les stats sont mal récupérées verifiez votre lien ou relancez la recherche, dofusbook bug parfois")
 stats_perso={}
 
 st.sidebar.write("# Stats du personnage") 
