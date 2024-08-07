@@ -35,7 +35,7 @@ def get_stats(url):
         options.add_argument("--headless")
         
         if os.name=='posix':
-            service = Service(executable_path="./webdriver/chromedriver",log_output=subprocess.STDOUT)
+            service = Service(executable_path="./webdriver/chromedriver")
             driver = webdriver.Chrome(service=service,options=options)
             # driver = webdriver.Chrome(options=options)
         elif os.name=='nt':    
