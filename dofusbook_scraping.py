@@ -34,7 +34,7 @@ def get_stats(url):
         options.add_argument("--headless")
         
         if os.name=='posix':
-            service = Service(executable_path="./webdriver/chromedriver")
+            service = Service(executable_path="./webdriver/chromedrivers")
             driver = webdriver.Chrome(service=service,options=options)
         elif os.name=='nt':    
             service = Service(executable_path=r"C:/Users/Joannes/Documents/Projects/InvRoxx/webdriver/msedgedriver.exe")
