@@ -8,6 +8,7 @@ import selenium.common.exceptions as sele_excep
 
 import re
 import os
+import subprocess
 
 if os.name=='posix':
     from selenium.webdriver.chrome.options import Options
@@ -34,7 +35,7 @@ def get_stats(url):
         options.add_argument("--headless")
         
         if os.name=='posix':
-            service = Service(executable_path="./webdriver/chromedriver")
+            service = Service(executable_path="./webdriver/chromedriver",log_output=subprocess.STDOUT)
             driver = webdriver.Chrome(service=service,options=options)
         elif os.name=='nt':    
             service = Service(executable_path=r"C:/Users/Joannes/Documents/Projects/InvRoxx/webdriver/msedgedriver.exe")
