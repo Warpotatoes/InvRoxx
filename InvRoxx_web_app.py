@@ -3,11 +3,10 @@ image_path='images/'
 
 import os
 
-# os.system('sudo apt-get install libnss3 ')
 os.system('chmod +x ./webdriver/chromedriver')
 os.system("./webdriver/chromedriver")
 
-
+os.system("chromium --version")
 ######################
 # Pages
 ######################
