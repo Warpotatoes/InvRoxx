@@ -13,6 +13,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 
 import re
+import os
 
 
 FR_KEYS=['PdV', 'PP', 'PA', 'PM', 'PO', 'Initiative', 'Critique', 'Invocation', 'Soin', 'Vitalité', 'Sagesse', 'Force', 'Intelligence', 'Chance', 'Agilité', 'Puissance', 'Fuite', 'Esq. PA', 'Esq. PM', 'Pods', 'Tacle', 'Ret. PA', 'Ret. PM', 'Niv. Stuff', 'Do Critique', '% Ré Air', '% Ré Feu', 'Do Eau', 'Do Terre', 'Do Neutre', '% Ré Terre', 'Prospection', 'Do Feu', 'Do Air', 'Do Poussée', 'Ré Neutre', '% Ré Neutre', 'Ré Terre', 'Ré Feu', 'Ré Eau', '% Ré Eau', 'Ré Air', 'Ré Critique', 'Ré Poussée']
@@ -30,11 +31,13 @@ def get_stats(url):
         options = Options() 
         options.add_argument("--headless")
         
-        # service = Service(executable_path="./webdriver/msedgedriver.exe")
-        # driver = webdriver.Edge(service=service,options=options)
+        if os.name=='posix':
+            service = Service(executable_path="./webdriver/chromedriver")
+            driver = webdriver.Chrome(service=service,options=options)
+        elif os.name=='nt':    
+            service = Service(executable_path="./webdriver/msedgedriver.exe")
+            driver = webdriver.Edge(service=service,options=options)
 
-        # service = Service(executable_path="./webdriver/patate")
-        # driver = webdriver.Chrome(service=service,options=options)
 
         driver = webdriver.Chrome(options=options)
 
