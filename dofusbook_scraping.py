@@ -49,7 +49,7 @@ def get_stats(url):
         
         if os.name=='posix':
             options.add_argument('--whitelisted-ips=""')
-            service = Service(executable_path="./webdriver/chromedriver")
+            service = Service(executable_path="./webdriver/chromedriver",port=5000)
             driver = webdriver.Chrome(service=service,options=options)
             # driver = webdriver.Chrome(options=options)
             # driver=get_driver()
