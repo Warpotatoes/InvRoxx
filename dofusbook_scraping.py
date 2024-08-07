@@ -13,8 +13,6 @@ import subprocess
 if os.name=='posix':
     from selenium.webdriver.chrome.options import Options
     from selenium.webdriver.chrome.service import Service
-    from seleniumbase import Driver
-    import undetected_chromedriver as uc
 elif os.name=='nt':    
     from selenium.webdriver.edge.service import Service
     from selenium.webdriver.edge.options import Options
@@ -37,10 +35,9 @@ def get_stats(url):
         options.add_argument("--headless")
         
         if os.name=='posix':
-            # service = Service(executable_path="./webdriver/chromedriver")
-            # driver = webdriver.Chrome(service=service,options=options)
+            service = Service(executable_path="./webdriver/chromedriver")
+            driver = webdriver.Chrome(service=service,options=options)
             # driver = webdriver.Chrome(options=options)
-            driver = uc.Chrome(options=options)
         elif os.name=='nt':    
             service = Service(executable_path=r"C:/Users/Joannes/Documents/Projects/InvRoxx/webdriver/msedgedriver.exe")
             driver = webdriver.Edge(service=service,options=options)
