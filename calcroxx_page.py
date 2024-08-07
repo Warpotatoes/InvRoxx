@@ -56,9 +56,9 @@ with mid_do:
     docri = st.number_input("Dommages Critiques",value=0,key=204)
 with right_do:
     st.write("### Adversaire")
-    reper= st.number_input("Résistances %",value=0,key=220)
-    refix= st.number_input("Résistances fixes",value=0,key=221)
-    recri= st.number_input("Résistances critiques",value=0,key=222)
+    reper= st.number_input("Résistances %",value=0,key=220,disabled=True)
+    refix= st.number_input("Résistances fixes",value=0,key=221,disabled=True)
+    recri= st.number_input("Résistances critiques",value=0,key=222,disabled=True)
 
     
 dégats_min= base_min*((100+stats)/100)+do 
