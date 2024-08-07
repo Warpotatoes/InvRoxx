@@ -45,14 +45,14 @@ st.write("## Calculateur de ligne de dégats de sort")
 
 left_do, mid_do,right_do = st.columns((1,1,1))
 with left_do:
-    base_min = st.number_input("Dommages de base minimum de la ligne",value=10,key=210)
-    base_max = st.number_input("Dommages de base maximum de la ligne",value=12,key=211)
-    base_min_cc = st.number_input("Dommages critiques de base minimum de la ligne",value=13,key=212)
-    base_max_cc = st.number_input("Dommages critiques de base maximum de la ligne",value=15,key=213)
+    base_min = st.number_input("Dommages de base minimum de la ligne",value=8,key=210)
+    base_max = st.number_input("Dommages de base maximum de la ligne",value=10,key=211)
+    base_min_cc = st.number_input("Dommages critiques de base minimum de la ligne",value=11,key=212)
+    base_max_cc = st.number_input("Dommages critiques de base maximum de la ligne",value=13,key=213)
 with mid_do:
-    stats = st.number_input("Stats (élémentaires + puissance)",value=100,key=201)
-    do = st.number_input("Dommages",value=0,key=202)
-    cc = st.number_input("%critiques (donnés par le stuff + %cc de base de la ligne)",value=10,key=203)
+    stats = st.number_input("Stats (élémentaires + puissance)",value=1000,key=201)
+    do = st.number_input("Dommages",value=100,key=202)
+    cc = st.number_input("%critiques (donnés par le stuff + %cc de base de la ligne)",value=5,key=203)
     docri = st.number_input("Dommages Critiques",value=0,key=204)
 with right_do:
     st.write("### Adversaire")
