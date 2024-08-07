@@ -1,15 +1,6 @@
 import streamlit as st
 image_path='images/'
 
-import os
-
-st.write(os.name)
-
-import platform
-
-st.write(platform.system())
-st.write(platform.release())
-
 ######################
 # Pages
 ######################

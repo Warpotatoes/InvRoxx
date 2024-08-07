@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 import selenium.common.exceptions as sele_excep
-from selenium.webdriver.edge.service import Service
+from selenium.webdriver.chrome.service import Service
 
 import re
 
@@ -26,8 +26,9 @@ def get_stats(url):
         options = Options() 
         options.add_argument("--headless")
         # driver = webdriver.Edge(options=options)
-        service = Service(executable_path="webdriver/msedgedriver.exe")
-        driver = webdriver.Edge(service=service,options=options)
+        # service = Service(executable_path="/webdriver/chromedriver")
+        # driver = webdriver.Edge(service=service,options=options)
+        driver = webdriver.Chrome(executable_path='/path/to/chromedriver',options=options)
         try :
             driver.get(url)
         except :
