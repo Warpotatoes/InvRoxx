@@ -24,7 +24,9 @@ def get_stats(url):
     if re.match("https://d-bk.net/(fr|en|es)/t/[a-zA-Z0-9]{4}",url):
         options = Options() 
         options.add_argument("--headless")
-        driver = webdriver.Edge(options=options)
+        # driver = webdriver.Edge(options=options)
+        service = webdriver.Edge(executable_path="webdriver/msedgedriver.exe")
+        driver = webdriver.Edge(service=service,options=options)
         try :
             driver.get(url)
         except :
