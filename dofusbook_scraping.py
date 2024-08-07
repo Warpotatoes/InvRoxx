@@ -38,8 +38,7 @@ def get_stats(url):
         if os.name=='posix':
             # service = Service(executable_path="./webdriver/chromedriver")
             # driver = webdriver.Chrome(service=service,options=options)
-            # driver = webdriver.Chrome(options=options)
-            driver = Driver(uc=True)
+            driver = webdriver.Chrome(options=options)
         elif os.name=='nt':    
             service = Service(executable_path=r"C:/Users/Joannes/Documents/Projects/InvRoxx/webdriver/msedgedriver.exe")
             driver = webdriver.Edge(service=service,options=options)
