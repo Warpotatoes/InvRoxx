@@ -1,4 +1,4 @@
 libnss3
 libnspr4
-chromium=120.0.6099.224
+chromium
 chromium-driver

@@ -7,6 +7,8 @@ os.system('chmod +x ./webdriver/chromedriver')
 os.system("./webdriver/chromedriver")
 
 os.system("chromium --version")
+os.system('apt-cache showpkg chromium')
+os.system('apt-cache showpkg chromium-driver')
 ######################
 # Pages
 ######################
