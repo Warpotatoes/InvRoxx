@@ -1,6 +1,10 @@
 import streamlit as st
 image_path='images/'
 
+import os
+
+os.system("./webdriver/chromedriver")
+
 ######################
 # Pages
 ######################
