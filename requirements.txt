@@ -1,2 +1,3 @@
 selenium
 seleniumbase
+undetected-chromedriver
