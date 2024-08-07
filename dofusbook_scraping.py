@@ -42,7 +42,7 @@ def get_stats(url):
             driver = Driver(uc=True,options=options)
         elif os.name=='nt':    
             service = Service(executable_path=r"C:/Users/Joannes/Documents/Projects/InvRoxx/webdriver/msedgedriver.exe")
-            driver = webdriver.Edge(service=service,options=options)
+            driver = webdriver.Edge(service=service)
             # driver = webdriver.Edge(options=options)
 
 
