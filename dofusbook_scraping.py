@@ -26,9 +26,9 @@ def get_stats(url):
         options = Options() 
         options.add_argument("--headless")
         # driver = webdriver.Edge(options=options)
-        # service = Service(executable_path="/webdriver/chromedriver")
+        service = Service(executable_path="/webdriver/chromedriver")
         # driver = webdriver.Edge(service=service,options=options)
-        driver = webdriver.Chrome(executable_path='/path/to/chromedriver',options=options)
+        driver = webdriver.Chrome(service=service,options=options)
         try :
             driver.get(url)
         except :
