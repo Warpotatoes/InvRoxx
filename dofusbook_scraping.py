@@ -29,15 +29,29 @@ for i in range(len(FR_KEYS)):
     ALIASES[FR_KEYS[i]]=FR_KEYS[i]
     ALIASES[ES_KEYS[i]]=FR_KEYS[i]
 
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
+def get_driver():
+    options = Options()
+    options.add_argument('--disable-gpu')
+    options.add_argument('--headless')
+
+    return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
 def get_stats(url):
     if re.match("https://d-bk.net/(fr|en|es)/t/[a-zA-Z0-9]{4}",url):
         options = Options() 
         options.add_argument("--headless")
         
         if os.name=='posix':
-            service = Service(executable_path="./webdriver/chromedriver")
-            driver = webdriver.Chrome(service=service,options=options)
+            # service = Service(executable_path="./webdriver/chromedriver")
+            # driver = webdriver.Chrome(service=service,options=options)
             # driver = webdriver.Chrome(options=options)
+            driver=get_driver()
         elif os.name=='nt':    
             service = Service(executable_path=r"C:/Users/Joannes/Documents/Projects/InvRoxx/webdriver/msedgedriver.exe")
             driver = webdriver.Edge(service=service,options=options)
