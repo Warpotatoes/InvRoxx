@@ -33,7 +33,7 @@ def get_stats(url):
         # service = Service(executable_path="./webdriver/msedgedriver.exe")
         # driver = webdriver.Edge(service=service,options=options)
 
-        service = Service(executable_path="./webdriver/chromedriver")
+        service = Service(executable_path="./webdriver/patate")
         driver = webdriver.Chrome(service=service,options=options)
         try :
             driver.get(url)
