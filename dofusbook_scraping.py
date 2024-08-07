@@ -1,11 +1,15 @@
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.edge.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 import selenium.common.exceptions as sele_excep
+
+# from selenium.webdriver.edge.service import Service
+# from selenium.webdriver.edge.options import Options
+
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 
 import re
@@ -25,9 +29,11 @@ def get_stats(url):
     if re.match("https://d-bk.net/(fr|en|es)/t/[a-zA-Z0-9]{4}",url):
         options = Options() 
         options.add_argument("--headless")
-        # driver = webdriver.Edge(options=options)
-        service = Service(executable_path="/webdriver/chromedriver")
+        
+        # service = Service(executable_path="./webdriver/msedgedriver.exe")
         # driver = webdriver.Edge(service=service,options=options)
+
+        service = Service(executable_path="./webdriver/chromedriver")
         driver = webdriver.Chrome(service=service,options=options)
         try :
             driver.get(url)
