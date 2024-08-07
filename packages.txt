@@ -1,4 +1,4 @@
 libnss3
 libnspr4
-chromium
+chromium == 80
 chromium-driver
