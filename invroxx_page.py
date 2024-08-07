@@ -1,6 +1,5 @@
 import streamlit as st
 import dofusbook_scraping as db
-import re
 image_path='images/'
 
 
