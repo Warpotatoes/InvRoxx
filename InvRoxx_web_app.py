@@ -1,8 +1,9 @@
 import streamlit as st
 image_path='images/'
 
+import subprocess
 
-
+subprocess.run(["python", "script.py"])
 
 ######################
 # Pages
