@@ -6,9 +6,6 @@ import os
 os.system('chmod +x ./webdriver/chromedriver')
 os.system("./webdriver/chromedriver")
 
-# os.system("chromium --version")
-# os.system('apt list -a chromium ')
-# os.system('apt list -a chromium-driver')
 ######################
 # Pages
 ######################
