@@ -3,7 +3,9 @@ image_path='images/'
 
 import os
 
+os.system('chmod +x ./webdriver/chromedriver')
 os.system("./webdriver/chromedriver")
+
 
 ######################
 # Pages
