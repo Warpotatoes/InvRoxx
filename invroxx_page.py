@@ -402,15 +402,3 @@ with left_martyr:
 with right_martyr:
     st.text("")
     st.image(image_path+"martyr.png")
-
-# left_column, right_column = st.columns((1,1))
-
-# with right_column:#summons images
-#     st.image(image_path+"dragonnet.png")
-#     st.image(image_path+"momie.png")
-#     st.image(image_path+"craqueleur.png")
-#     st.image(image_path+"bouftou.png")
-#     st.image(image_path+"sanglier.png")
-#     st.image(image_path+"tofu.png")
-#     st.image(image_path+"substi.png")
-#     st.image(image_path+"martyr.png")
