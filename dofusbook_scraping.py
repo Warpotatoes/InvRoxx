@@ -6,14 +6,16 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 import selenium.common.exceptions as sele_excep
 
-# from selenium.webdriver.edge.service import Service
-# from selenium.webdriver.edge.options import Options
-
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
-
 import re
 import os
+
+if os.name=='posix':
+    from selenium.webdriver.chrome.options import Options
+    from selenium.webdriver.chrome.service import Service
+elif os.name=='nt':    
+    from selenium.webdriver.edge.service import Service
+    from selenium.webdriver.edge.options import Options
+    
 
 
 FR_KEYS=['PdV', 'PP', 'PA', 'PM', 'PO', 'Initiative', 'Critique', 'Invocation', 'Soin', 'Vitalité', 'Sagesse', 'Force', 'Intelligence', 'Chance', 'Agilité', 'Puissance', 'Fuite', 'Esq. PA', 'Esq. PM', 'Pods', 'Tacle', 'Ret. PA', 'Ret. PM', 'Niv. Stuff', 'Do Critique', '% Ré Air', '% Ré Feu', 'Do Eau', 'Do Terre', 'Do Neutre', '% Ré Terre', 'Prospection', 'Do Feu', 'Do Air', 'Do Poussée', 'Ré Neutre', '% Ré Neutre', 'Ré Terre', 'Ré Feu', 'Ré Eau', '% Ré Eau', 'Ré Air', 'Ré Critique', 'Ré Poussée']
@@ -35,11 +37,12 @@ def get_stats(url):
             service = Service(executable_path="./webdriver/chromedriver")
             driver = webdriver.Chrome(service=service,options=options)
         elif os.name=='nt':    
-            service = Service(executable_path="./webdriver/msedgedriver.exe")
+            service = Service(executable_path=r"C:/Users/Joannes/Documents/Projects/InvRoxx/webdriver/msedgedriver.exe")
             driver = webdriver.Edge(service=service,options=options)
+            # driver = webdriver.Edge(options=options)
 
 
-        driver = webdriver.Chrome(options=options)
+        # driver = webdriver.Chrome(options=options)
 
         try :
             driver.get(url)
