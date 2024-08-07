@@ -8,7 +8,6 @@ import selenium.common.exceptions as sele_excep
 
 import re
 import os
-import subprocess
 
 if os.name=='posix':
     from selenium.webdriver.chrome.options import Options
@@ -28,19 +27,6 @@ for i in range(len(FR_KEYS)):
     ALIASES[EN_KEYS[i]]=FR_KEYS[i]
     ALIASES[FR_KEYS[i]]=FR_KEYS[i]
     ALIASES[ES_KEYS[i]]=FR_KEYS[i]
-
-
-# from selenium import webdriver
-# from selenium.webdriver.chrome.options import Options
-# from selenium.webdriver.chrome.service import Service
-# from webdriver_manager.chrome import ChromeDriverManager
-
-# def get_driver():
-#     options = Options()
-#     options.add_argument('--disable-gpu')
-#     options.add_argument('--headless')
-
-#     return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 def get_stats(url):
     if re.match("https://d-bk.net/(fr|en|es)/t/[a-zA-Z0-9]{4}",url):

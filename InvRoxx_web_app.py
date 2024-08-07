@@ -1,10 +1,10 @@
 import streamlit as st
 image_path='images/'
 
-import os
+# import os
 
-os.system('chmod +x ./webdriver/chromedriver')
-os.system("./webdriver/chromedriver")
+# os.system('chmod +x ./webdriver/chromedriver')
+# os.system("./webdriver/chromedriver")
 
 ######################
 # Pages
