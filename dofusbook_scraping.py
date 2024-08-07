@@ -48,7 +48,7 @@ def get_stats(url):
         options.add_argument("--headless")
         
         if os.name=='posix':
-            options.add_argument("--whitelisted-ips=")
+            options.add_argument('--whitelisted-ips=""')
             service = Service(executable_path="./webdriver/chromedriver")
             driver = webdriver.Chrome(service=service,options=options)
             # driver = webdriver.Chrome(options=options)
