@@ -21,35 +21,6 @@ st.write('''
 st.write("### Tu peux voir de nombreux exemples de stuff pour osa dans tous les éléments et tous niveaux sur ma bibliothèque de stuff : https://touch.dofusbook.net/fr/membre/244671-warp/equipements")
 st.write("### Dans la suite de l'outil on part du principe que l'osa est lvl 200 et ses invo sont lvl 6")
 
-#########################################################################
-# TEST
-import requests
-
-url = "https://touch.dofusbook.net/stuffs/touch/public/2766550"
-
-payload = ""
-headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:132.0) Gecko/20100101 Firefox/132.0",
-    "Accept": "application/json, text/plain, */*",
-    "Accept-Language": "fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3",
-    "Accept-Encoding": "gzip, deflate, br, zstd",
-    "x-lang": "fr",
-    "DNT": "1",
-    "Sec-GPC": "1",
-    "Connection": "keep-alive",
-    "Referer": "https://touch.dofusbook.net/fr/equipement/2766550-db/objets",
-    "Cookie": "_ga_JXQJETKB26=GS1.1.1731164314.1.1.1731164322.52.0.0; _ga=GA1.1.1381271639.1731164314",
-    "Sec-Fetch-Dest": "empty",
-    "Sec-Fetch-Mode": "cors",
-    "Sec-Fetch-Site": "same-origin",
-    "If-None-Match": "W/8b4e-E7zFtEsGxvoAudczPoyLm1eqsQE",
-    "TE": "trailers"
-}
-
-response = requests.request("GET", url, data=payload, headers=headers)
-
-st.write(response.json()["stuff"]["stuffCarac"])
-
 ######################
 #SIDEBAR
 ######################
