@@ -20,21 +20,6 @@ st.write('''
 st.write("### Tu peux voir de nombreux exemples de stuff pour osa dans tous les éléments et tous niveaux sur ma bibliothèque de stuff : https://touch.dofusbook.net/fr/membre/244671-warp/equipements")
 st.write("### Dans la suite de l'outil on part du principe que l'osa est lvl 200 et ses invo sont lvl 6")
 
-import requests as req
-def get_db_id(short_url):
-    try:
-        response = req.get(short_url, allow_redirects=True)
-        spl=response.url.split("/")
-        return spl[5][:-3]  
-        # Retourne l'URL finale après toutes les redirections
-    except req.RequestException as e:
-        print(f"Erreur lors de la requête: {e}")
-        return None
-
-url = "https://d-bk.net/fr/t/Bbhm"
-db_id=get_db_id(url)
-resp = req.get("https://touch.dofusbook.net/stuffs/touch/public/"+str(db_id),allow_redirects=True)
-st.write(resp.json())
 
 ######################
 #SIDEBAR
