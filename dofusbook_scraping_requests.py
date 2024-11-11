@@ -1,8 +1,8 @@
 import requests as req
 
-FR_KEYS=['PA', 'PM', 'PO', 'Initiative', 'Critique', 'Invocation', 'Soin', 'Vitalité', 'Sagesse', 'Force', 'Intelligence', 'Chance', 'Agilité', 'Puissance', 'Fuite', 'Esq. PA', 'Esq. PM', 'Pods', 'Tacle', 'Ret. PA', 'Ret. PM',  'Do Critique', '% Ré Air', '% Ré Feu', 'Do Eau', 'Do Terre', 'Do Neutre', '% Ré Terre', 'Prospection', 'Do Feu', 'Do Air', 'Do Poussée', 'Ré Neutre', '% Ré Neutre', 'Ré Terre', 'Ré Feu', 'Ré Eau', '% Ré Eau', 'Ré Air', 'Ré Critique', 'Ré Poussée']
-EN_KEYS=['AP', 'MP', 'Range', 'Initiative', 'Critical', 'Summon', 'Heal', 'Vitality', 'Wisdom', 'Strength', 'Intelligence', 'Chance', 'Agility', 'Power', 'Dodge', 'AP Res.', 'MP Res.', 'Pods', 'Lock', 'AP Red', 'MP Red',  'Da Critical', '% Re Air', '% Re Fire', 'Da Water', 'Da Earth', 'Da Neutral', '% Re Earth', 'Prospecting', 'Da Fire', 'Da Air', 'Da Pushback', 'Re Neutral', '% Re Neutral', 'Re Earth', 'Re Fire', 'Re Water', '% Re Water', 'Re Air', 'Re Critical', 'Re Pushback']
-ES_KEYS=['PA', 'PM', 'AL', 'Iniciativa', 'Crítico', 'Invocación', 'Cura', 'Vitalidad', 'Sabiduría', 'Fuerza', 'Inteligencia', 'Suerte', 'Agilidad', 'Potencia', 'Huida', 'Esq. PA', 'Esq. PM', 'Pods', 'Placaje', 'Ret. PA', 'Ret. PM',  'Da Crítico', '% Re Aire', '% Re Fuego', 'Da Agua', 'Da Tierra', 'Da Neutro', '% Re Tierra', 'Prospección', 'Da Fuego', 'Da Aire', 'Da Empuje', 'Re Neutro', '% Re Neutro', 'Re Tierra', 'Re Fuego', 'Re Agua', '% Re Agua', 'Re Aire', 'Re Crítico', 'Re Empuje']
+FR_KEYS=['PA', 'PM', 'PO', 'Initiative', 'Critique', 'Invocation', 'Soin', 'Vitalité', 'Sagesse', 'Force', 'Intelligence', 'Chance', 'Agilité', 'Puissance', 'Fuite', 'Esq. PA', 'Esq. PM', 'Pods', 'Tacle', 'Ret. PA', 'Ret. PM',  'Do Critique', '% Ré Air', '% Ré Feu', 'Do Eau', 'Do Terre', 'Do Neutre', '% Ré Terre', 'Prospection', 'Do Feu', 'Do Air', 'Do Poussée', 'Ré Neutre', '% Ré Neutre', 'Ré Terre', 'Ré Feu', 'Ré Eau', '% Ré Eau', 'Ré Air', 'Ré Critique', 'Ré Poussée', "Do"]
+EN_KEYS=['AP', 'MP', 'Range', 'Initiative', 'Critical', 'Summon', 'Heal', 'Vitality', 'Wisdom', 'Strength', 'Intelligence', 'Chance', 'Agility', 'Power', 'Dodge', 'AP Res.', 'MP Res.', 'Pods', 'Lock', 'AP Red', 'MP Red',  'Da Critical', '% Re Air', '% Re Fire', 'Da Water', 'Da Earth', 'Da Neutral', '% Re Earth', 'Prospecting', 'Da Fire', 'Da Air', 'Da Pushback', 'Re Neutral', '% Re Neutral', 'Re Earth', 'Re Fire', 'Re Water', '% Re Water', 'Re Air', 'Re Critical', 'Re Pushback', "Da"]
+ES_KEYS=['PA', 'PM', 'AL', 'Iniciativa', 'Crítico', 'Invocación', 'Cura', 'Vitalidad', 'Sabiduría', 'Fuerza', 'Inteligencia', 'Suerte', 'Agilidad', 'Potencia', 'Huida', 'Esq. PA', 'Esq. PM', 'Pods', 'Placaje', 'Ret. PA', 'Ret. PM',  'Da Crítico', '% Re Aire', '% Re Fuego', 'Da Agua', 'Da Tierra', 'Da Neutro', '% Re Tierra', 'Prospección', 'Da Fuego', 'Da Aire', 'Da Empuje', 'Re Neutro', '% Re Neutro', 'Re Tierra', 'Re Fuego', 'Re Agua', '% Re Agua', 'Re Aire', 'Re Crítico', 'Re Empuje', "Da"]
 
 ALIASES=dict()
 for i in range(len(FR_KEYS)):
@@ -150,4 +150,6 @@ def get_stats(url):
     perso["Ret. PA"]+=max(0,perso["Sagesse"]/10//1)
     perso["Ret. PM"]+=max(0,perso["Sagesse"]/10//1)
     perso["Initiative"]+=max(0,perso["Intelligence"])+max(0,perso["Chance"])+max(0,perso["Agilité"])+max(0,perso["Force"])
+
+    
     return perso

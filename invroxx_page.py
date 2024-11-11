@@ -31,10 +31,14 @@ st.sidebar.image(image_path+"logo_invroxx_transp.png" )
 
 db_link=st.sidebar.text_input("Lien dofusbook",placeholder="https://d-bk.net/fr/t/A7si")
 if db_link!='':
-    db_stats=db.get_stats(db_link)  
-    if "db_name" in db_stats.keys():
-        st.sidebar.write("Stuff sélectionné :")
-        st.sidebar.write(" "+db_stats["db_name"])
+    try:
+        db_stats=db.get_stats(db_link)  
+        if "db_name" in db_stats.keys():
+            st.sidebar.write("Stuff sélectionné :")
+            st.sidebar.write(" "+db_stats["db_name"])
+    except Exception as e:
+            st.sidebar.write(f"Erreur dans la récupération des stats : {e}")
+    
     # if type(db_stats)==str:
     #     st.sidebar.write(db_stats)
     # else:
