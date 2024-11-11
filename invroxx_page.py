@@ -86,6 +86,7 @@ else:
 
     stats_perso["Do"]=int(st.sidebar.text_input("Dommages", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
 
+    st.sidebar.write(db_stats)
 
 ######################
 #Variables générales
