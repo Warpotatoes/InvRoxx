@@ -1,5 +1,5 @@
 import streamlit as st
-import dofusbook_scraping as db
+import dofusbook_scraping_requests as db
 image_path='images/'
 
 
