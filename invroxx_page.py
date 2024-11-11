@@ -33,7 +33,7 @@ db_link=st.sidebar.text_input("Lien dofusbook",placeholder="https://d-bk.net/fr/
 if db_link!='':
     db_stats=db.get_stats(db_link)  
     if "db_name" in db_stats.keys():
-        st.sidebar.write(db_stats["db_name"])
+        st.sidebar.write("# "+db_stats["db_name"])
     # if type(db_stats)==str:
     #     st.sidebar.write(db_stats)
     # else:
