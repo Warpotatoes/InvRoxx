@@ -84,7 +84,7 @@ else:
     #soin
     stats_perso["Soin"]=int(st.sidebar.text_input("Soin", value=db_stats["Soin"], max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
 
-    stats_perso["Do"]=int(st.sidebar.text_input("Dommages", value=0, max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
+    stats_perso["Do"]=int(st.sidebar.text_input("Dommages", value=db_stats["Do"], max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None, disabled=False))
 
     st.sidebar.write(db_stats)
 
