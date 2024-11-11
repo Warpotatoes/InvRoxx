@@ -105,15 +105,18 @@ def get_stats(url):
     fmglobal=data["fmGlobal"] #  1 element = 1 stat
     items=data["items"] #list d'items, chaque item est un dict dont la clef "effects" est une liste d'effets où chaque effet est un dict contenant les clefts suivantes 'name': 'nomdelastat','type': 'E', 'min': 0,'max': 0,
     panos=data["cloths"] # list de pano, chaque item est un dict dont la clef "effects" est une liste d'effets où chaque effet est un dict contenant les clefts suivantes 'name': 'nomdelastat','type': 'E', 'value' : 1
-    lvl=data["stuff"]["character_level"]
+    
 
     perso={key: 0 for key in FR_KEYS}
+
+    perso["lvl"]=data["stuff"]["character_level"]
+    perso["db_name"]=data["stuff"]["name"]
     perso["PA"]=7
-    if lvl<100:
+    if perso["lvl"]<100:
         perso["PA"]-=1
     perso["PM"]=3
     perso["Invocation"]=1
-    perso["Vitalité"]=50+5*lvl
+    perso["Vitalité"]=50+5*perso["lvl"]
 
     for elt in perso_stats:
         perso[TRAD_DB_STATS[elt]]+=perso_stats[elt]

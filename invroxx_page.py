@@ -29,13 +29,15 @@ st.sidebar.image(image_path+"logo_invroxx_transp.png" )
 # st.sidebar.write("# Stats du personnage") 
 # st.sidebar.write("(les stats du parchotage et des points investis ne comptent pas pour les dégats des invo, seul l'équipement compte)") 
 
-db_link=st.sidebar.text_input("Lien dofusbook (pas encore fonctionnel mais je taff dessus)",placeholder="https://d-bk.net/fr/t/A7si")
+db_link=st.sidebar.text_input("Lien dofusbook",placeholder="https://d-bk.net/fr/t/A7si")
 if db_link!='':
     db_stats=db.get_stats(db_link)  
-    if type(db_stats)==str:
-        st.sidebar.write(db_stats)
-    else:
-        st.sidebar.write("Si les stats sont mal récupérées verifiez votre lien ou relancez la recherche, dofusbook bug parfois")
+    if "db_name" in db_stats.keys():
+        st.sidebar.write(db_stats["db_name"])
+    # if type(db_stats)==str:
+    #     st.sidebar.write(db_stats)
+    # else:
+    #     st.sidebar.write("Si les stats sont mal récupérées verifiez votre lien ou relancez la recherche, dofusbook bug parfois")
 stats_perso={}
 
 st.sidebar.write("# Stats du personnage") 
