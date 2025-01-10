@@ -56,17 +56,18 @@ with mid_do:
     docri = st.number_input("Dommages Critiques",value=0,key=204)
 with right_do:
     st.write("### Adversaire")
-    reper= st.number_input("Résistances %",value=0,key=220,disabled=True)
-    refix= st.number_input("Résistances fixes",value=0,key=221,disabled=True)
-    recri= st.number_input("Résistances critiques",value=0,key=222,disabled=True)
+    reper= st.number_input("Résistances %",value=0,key=220,disabled=False)
+    refix= st.number_input("Résistances fixes",value=0,key=221,disabled=False)
+    recri= st.number_input("Résistances critiques",value=0,key=222,disabled=False)
 
-    
-dégats_min= base_min*((100+stats)/100)+do 
-dégats_max= base_max*((100+stats)/100)+do 
+# Dégâts subis = Partie entière([Dégâts bruts - re fixes] * [100 - Résistance en %]/ 100)
+
+dégats_min= ((base_min*((100+stats)/100)+do)-refix)*(100-reper)/100
+dégats_max= ((base_max*((100+stats)/100)+do)-refix)*(100-reper)/100 
 mean_do=(dégats_min+dégats_max)/2
 
-dégats_cc_min= base_min_cc*((100+stats)/100)+do+docri
-dégats_cc_max= base_max_cc*((100+stats)/100)+do+docri
+dégats_cc_min= ((base_min_cc*((100+stats)/100)+do+docri)-refix-recri)*(100-reper)/100
+dégats_cc_max= ((base_max_cc*((100+stats)/100)+do+docri)-refix-recri)*(100-reper)/100
 mean_do_cc=(dégats_cc_min+dégats_cc_max)/2
 
 mean_do_globaux=cc/100*mean_do_cc+(100-cc)/100*mean_do
