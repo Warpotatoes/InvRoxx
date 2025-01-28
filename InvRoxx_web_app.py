@@ -1,10 +1,6 @@
 import streamlit as st
 image_path='images/'
 
-import os
-os.system('chmod +x ./webdriver/chromedriver') #without it chromedriver can't be executed
-# os.system("./webdriver/chromedriver")
-
 ######################
 # Pages
 ######################
