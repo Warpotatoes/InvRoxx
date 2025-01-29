@@ -10,14 +10,7 @@ image_path='images/'
 st.set_page_config(page_title="CalcInvo",page_icon=image_path+"logo_InvRoxx_tab.png",layout="wide")
 
 st.write("# Le calculateur de roxx de tes invo préférées")
-st.write('''
-   
-''')
-st.write('''
-   
-''')
 
-# st.write('### Tu peux voir de nombreux exemples de stuff pour osa dans tous les éléments et tous niveaux sur ma bibliothèque de stuff :')
 st.write("### Dans la suite de l'outil on part du principe que l'osa est lvl 200 et ses invo sont lvl 6")
 
 
@@ -28,8 +21,6 @@ st.write("### Dans la suite de l'outil on part du principe que l'osa est lvl 200
 st.sidebar.image(image_path+"calcinvo_logo_nom_transp.png" )
 st.sidebar.page_link("https://d-bk.net/fr/tl/11eJ",label='**Biblio DofusBook**',icon="📚")
 
-# st.sidebar.write("# Stats du personnage") 
-# st.sidebar.write("(les stats du parchotage et des points investis ne comptent pas pour les dégats des invo, seul l'équipement compte)") 
 
 db_stats="no_db"
 
@@ -50,6 +41,7 @@ if db_link!='':
 stats_perso={}
 
 st.sidebar.write("# Stats du personnage") 
+# st.sidebar.write("(les stats du parchotage et des points investis ne comptent pas pour les dégats des invo, seul l'équipement compte)") 
 
 if db_link=='' or type(db_stats)==str:
         
