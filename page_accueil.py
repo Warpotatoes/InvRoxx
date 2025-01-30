@@ -10,12 +10,17 @@ image_path='images/'
 
 st.set_page_config(page_title="CalcOfus",page_icon=image_path+"logo_InvRoxx_tab.png",layout="wide")
 
-import os
-current_os=os.name
-st.write(current_os)
-
 import platform
-st.write(platform.platform())
+plat=platform.platform()
+if plat=="Linux-6.1.100+-x86_64-with-glibc2.31": #streamlit
+    st.write("J'ai changé l'hébergement de mon application, vous pouvez la retrouver sur CalcOfus.fr 🥳")
+    st.link_button("clique ici pour aller sur le nouveau site!", "https://calcofus.fr", help=None, type="secondary", disabled=False, use_container_width=True)
+
+elif plat=="Linux-6.8.0-52-generic-x86_64-with-glibc2.36": #serveur 
+    pass
+else :
+    st.write("🥳 J'ai changé l'hébergement de mon application, vous pouvez la retrouver sur CalcOfus.fr 🥳")
+    st.link_button("clique ici pour aller sur le nouveau site!", "https://calcofus.fr", help=None, type="secondary", disabled=False, use_container_width=True)
 ######################
 #SIDEBAR
 ######################
