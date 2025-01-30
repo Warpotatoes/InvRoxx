@@ -3,12 +3,19 @@ image_path='images/'
 
 
 
+
 ######################
 # Page Title
 ######################
 
 st.set_page_config(page_title="CalcOfus",page_icon=image_path+"logo_InvRoxx_tab.png",layout="wide")
 
+import os
+current_os=os.name
+st.write(current_os)
+
+import platform
+st.write(platform.platform())
 ######################
 #SIDEBAR
 ######################
