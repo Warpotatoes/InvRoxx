@@ -57,12 +57,30 @@ with col1:
 - ou entrée des stats custom dans la sidebar""")
 with col2:
     with st.container(border=True):
-        st.page_link("page_sorts.py",label='**CalcSorts**',icon=":material/sword_rose:", use_container_width=True)
-        st.write("Calculateur de ligne de dégats de sort")
+        st.page_link("page_bombes.py",label='**CalcoBoom**',icon=":material/bomb:", use_container_width=True)
+        st.write("""Calculateur de dégats des bombes
+- importation des stats depuis dofusbook possible
+- ou entrée des stats custom dans la sidebar""")
 with col3:
     with st.container(border=True):
         st.page_link("page_dopou.py",label='**CalcOpou**',icon=":material/directions_alt:", use_container_width=True)
         st.write("Calculateur de dégats de poussée")
+
+col4, col5,co6 = st.columns((1,1,1))
+with col5:
+    with st.container(border=True):
+        st.page_link("page_sorts.py",label='**CalcSorts**',icon=":material/sword_rose:", use_container_width=True)
+        st.write("Calculateur de ligne de dégats de sort")
+
+        
+# with col5:
+#     with st.container(border=True):
+#         st.page_link("page_sorts.py",label='**CalcSorts**',icon=":material/sword_rose:", use_container_width=True)
+#         st.write("Calculateur de ligne de dégats de sort")
+# with co6:
+#     with st.container(border=True):
+#         st.page_link("page_dopou.py",label='**CalcOpou**',icon=":material/directions_alt:", use_container_width=True)
+#         st.write("Calculateur de dégats de poussée")
 
 st.html("""
         <div style='text-align: center; 
@@ -92,7 +110,7 @@ with warpBot:
         st.link_button("Ajoute le sur discord 🤖", "https://discord.com/oauth2/authorize?client_id=1288167324586872842", help=None, type="secondary", icon="🤖", disabled=False, use_container_width=True)
 
 
-dofusbook, vide1,vide2 = st.columns((1,1,1))
+vide1,dofusbook, vide2 = st.columns((1,1,1))
 with dofusbook:
     with st.container(border=True):    
         st.page_link("https://d-bk.net/fr/tl/11eJ",label='**Biblio DofusBook**',icon="📚", use_container_width=True)
