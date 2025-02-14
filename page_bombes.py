@@ -342,3 +342,5 @@ with left_BA:
 with right_BA:
     st.text("")
     st.image(image_path+"Tornabombe.png")
+
+st.write("Merci au discord roublard pour l'aide apportée lors de la création de l'outil ❤️")
