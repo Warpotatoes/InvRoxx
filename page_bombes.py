@@ -158,6 +158,7 @@ with left_BF:
 
     st.write("### Explobombe")
 
+    col_lvl_BF,col_vita_BF=st.columns((1,1))
     #Lvl Bombe
     if stats_perso["Lvl"]>130:
         BF_lvl_base=lvls_bombes[2]
@@ -166,8 +167,7 @@ with left_BF:
     else:
         BF_lvl_base=lvls_bombes[0]
     
-    l_BF_in,r_BF_in=st.columns((1,1))
-    BF_lvl_bombes_unchecked = st.pills("Lvl Bombe", lvls_bombes, selection_mode="single",default=BF_lvl_base,key=0)
+    BF_lvl_bombes_unchecked = col_lvl_BF.pills("Lvl Bombe", lvls_bombes, selection_mode="single",default=BF_lvl_base,key=0)
     if BF_lvl_bombes_unchecked in lvls_bombes:
         BF_lvl_bombes=BF_lvl_bombes_unchecked
     else:
@@ -185,7 +185,7 @@ with left_BF:
 | ----------- |
 """
     tab_vita_BF+="| "+str(int(calcul_vita_bombes(stats_perso["Vita"],stats_perso["Lvl"],vita_bombes_base[BF_lvl_bombes])))+" |\n"
-    st.write(tab_vita_BF)
+    col_vita_BF.write(tab_vita_BF)
     
     tab_BF="""
 |   | Valeur min | Valeur max | Moyenne |
@@ -222,6 +222,7 @@ with left_BE:
 
     st.write("### Bombe à eau")
 
+    col_lvl_BE,col_vita_BE=st.columns((1,1))
     #Lvl Bombe
     if stats_perso["Lvl"]>124:
         BE_lvl_base=lvls_bombes[2]
@@ -230,8 +231,7 @@ with left_BE:
     else:
         BE_lvl_base=lvls_bombes[0]
 
-    l_BE_in,r_BE_in=st.columns((1,1))
-    BE_lvl_bombes_unchecked = st.pills("Lvl Bombe", lvls_bombes, selection_mode="single",default=BE_lvl_base,key=1)
+    BE_lvl_bombes_unchecked = col_lvl_BE.pills("Lvl Bombe", lvls_bombes, selection_mode="single",default=BE_lvl_base,key=1)
     if BE_lvl_bombes_unchecked in lvls_bombes:
         BE_lvl_bombes=BE_lvl_bombes_unchecked
     else:
@@ -249,7 +249,7 @@ with left_BE:
 | ----------- |
 """
     tab_vita_BE+="| "+str(int(calcul_vita_bombes(stats_perso["Vita"],stats_perso["Lvl"],vita_bombes_base[BE_lvl_bombes])))+" |\n"
-    st.write(tab_vita_BE)
+    col_vita_BE.write(tab_vita_BE)
     
     tab_BE="""
 |   | Valeur min | Valeur max | Moyenne |
@@ -286,6 +286,7 @@ with left_BA:
 
     st.write("### Tornabombe")
 
+    col_lvl_BA,col_vita_BA=st.columns((1,1))
     #Lvl Bombe
     if stats_perso["Lvl"]>100:
         BA_lvl_base=lvls_bombes[2]
@@ -294,12 +295,12 @@ with left_BA:
     else:
         BA_lvl_base=lvls_bombes[0]
     
-    l_BA_in,r_BA_in=st.columns((1,1))
-    BA_lvl_bombes_unchecked = st.pills("Lvl Bombe", lvls_bombes, selection_mode="single",default=BA_lvl_base,key=2)
+    BA_lvl_bombes_unchecked = col_lvl_BA.pills("Lvl Bombe", lvls_bombes, selection_mode="single",default=BA_lvl_base,key=2)
     if BA_lvl_bombes_unchecked in lvls_bombes:
         BA_lvl_bombes=BA_lvl_bombes_unchecked
     else:
         BA_lvl_bombes=lvls_bombes[2]
+
     #dégats de base bombe
     tornabombe_do={
         '4':(11,13,11,12)
@@ -313,7 +314,7 @@ with left_BA:
 | ----------- |
 """
     tab_vita_BA+="| "+str(int(calcul_vita_bombes(stats_perso["Vita"],stats_perso["Lvl"],vita_bombes_base[BA_lvl_bombes])))+" |\n"
-    st.write(tab_vita_BA)
+    col_vita_BA.write(tab_vita_BA)
     
     tab_BA="""
 |   | Valeur min | Valeur max | Moyenne |

@@ -48,7 +48,7 @@ Utilisez la barre sur la gauche pour naviguer entre les outils, ou bien cliquer 
 ##############
 # Outils
 ##############
-col1, col2,col3 = st.columns((1,1,1))
+col1, col2,col3 = st.columns((1,1,1),vertical_alignment='top')
 with col1:
     with st.container(border=True):
         st.page_link("page_invo.py",label='**CalcInvo**',icon=":material/cruelty_free:", use_container_width=True)
